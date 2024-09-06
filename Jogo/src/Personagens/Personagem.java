@@ -1,5 +1,7 @@
 package Personagens;
 
+import java.util.Random;
+
 /* Classe para personagens (Jogador e Inimigo) */
 public class Personagem {
     private String nome;
@@ -66,5 +68,24 @@ public class Personagem {
         int danoFinal = Math.max(dano - defesa, 0);
         vida -= danoFinal;
         System.out.println(nome + " recebeu " + danoFinal + " de dano. Vida restante: " + vida);
+    }
+
+    public boolean estaVivo(){
+        return vida > 0;
+    }
+
+    public abstract void realizarAcao(Personagem alvo);
+
+    //Método para simular a rolagem de dados 
+    protected int rolarD6(){
+        return new Random().nextInt(6) + 1;
+    }
+
+    protected int rolarD12(){
+        return new Random().nextInt(12) + 1;
+    }
+
+    protected int rolarD4(){
+        return new Random().nextInt(4) + 1;
     }
 }

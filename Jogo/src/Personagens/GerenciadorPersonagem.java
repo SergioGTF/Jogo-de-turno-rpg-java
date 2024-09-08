@@ -45,12 +45,10 @@ public class GerenciadorPersonagem {
 
         Jogador jogador = new Jogador(nomeJogador, 100, forca, constituicao, agilidade, destreza);
 
-        // Escolha de arma
         GerenciarArmamento gerenciadorEquipamento = new GerenciarArmamento();
         Arma armaEscolhida = gerenciadorEquipamento.escolherArma();
         jogador.equiparArma(armaEscolhida);
 
-        // Escolha de armadura
         Armadura armaduraEscolhida = gerenciadorEquipamento.escolherArmadura();
         jogador.equiparArmadura(armaduraEscolhida);
 

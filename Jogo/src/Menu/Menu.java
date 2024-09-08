@@ -24,13 +24,10 @@ public class Menu {
                     GerenciadorInimigos gerenciadorInimigos = new GerenciadorInimigos();
                     GerenciadorCombate gerenciadorCombate = new GerenciadorCombate();
 
-                    // Criar jogador e escolher arma
                     Jogador jogador = gerenciadorPersonagem.criarJogador();
 
-                    // Criar inimigos
                     List<Adversario> inimigos = gerenciadorInimigos.criarInimigos();
 
-                    // Iniciar o combate
                     gerenciadorCombate.iniciarCombate(jogador, inimigos);
                     break;
                 case 2:

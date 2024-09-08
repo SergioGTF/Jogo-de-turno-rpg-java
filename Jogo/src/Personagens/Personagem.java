@@ -64,7 +64,7 @@ public abstract class Personagem {
     public int calcularDano() {
         if (arma == null) {
             System.out.println(getNome() + " não está equipado com uma arma!");
-            return 0;  // Retorna 0 se não houver arma
+            return 0;  
         }
     
         int dado = arma.getCategoria().equals("pesada") ? rolarD12() : rolarD6() + rolarD6() + rolarD4();
@@ -88,7 +88,6 @@ public abstract class Personagem {
 
     public abstract void realizarAcao(Personagem alvo);
 
-    /* Método para simular a rolagem de dados */
     protected int rolarD6(){
         return new Random().nextInt(6) + 1;
     }

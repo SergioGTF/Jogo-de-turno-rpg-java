@@ -1,4 +1,4 @@
-package Personagens;
+package Armamento;
 
 public class Armadura {
     private String nome;

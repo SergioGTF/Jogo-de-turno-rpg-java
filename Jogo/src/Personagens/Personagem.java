@@ -2,8 +2,11 @@ package Personagens;
 
 import java.util.Random;
 
+import Armamento.Arma;
+import Armamento.Armadura;
+
 /* Classe para personagens (Jogador e Inimigo) */
-public class Personagem {
+public abstract class Personagem {
     private String nome;
     private int vida;
     private int forca;
@@ -76,7 +79,7 @@ public class Personagem {
 
     public abstract void realizarAcao(Personagem alvo);
 
-    //Método para simular a rolagem de dados 
+    /* Método para simular a rolagem de dados */
     protected int rolarD6(){
         return new Random().nextInt(6) + 1;
     }

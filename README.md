@@ -13,6 +13,81 @@ Este projeto implementa um sistema de combate em turnos inspirado em JRPGs (Japa
 - **Recompensas por Vitória**: Ao vencer um combate, o jogador recebe melhorias como pontos de atributos extras, novas armas e armaduras.
 - **Progressão**: O jogador enfrenta três adversários, com dificuldade crescente, até alcançar a vitória final.
 
+## Fluxogramas
+
+- **Fluxograma do Jogo**
+
+Início 
+  |
+  v
+Criar Personagem
+  |
+  v
+1º Combate
+  |
+  v
+1º Premiação
+  |
+  v
+2º Combate
+  |
+  v
+2º Premiação
+  |
+  v
+3º Combate
+  |
+  v
+3º Premiação
+  |
+  v
+Vitória
+
+- **Criação de personagem**
+
+Criação de Personagem
+  |
+  v
+Digitar Nome
+  |
+  v
+Distribuir Pontos
+  |
+  v
+Escolher Arma
+  |
+  v
+Escolher Armadura
+
+
+- **Fluxograma de combate**
+Combate
+  |
+  v
+Jogador é Mais Rápido?
+   /  \
+Sim  Não
+ |     |
+ v     v
+Turno Jogador    Turno Adversário
+ |                |
+ v                v
+Turno Adversário  Turno Jogador
+  |
+  v
+Alguém Morreu?
+   /  \
+Sim   Não
+ |     |
+ v     v
+Jogador Morto?  Repetir Combate
+   /  \
+Sim   Não
+ |     |
+ v     v
+Fim de Jogo  Vitória
+
+
 ## Requisitos
 
 - Desenvolvido em **Java**.

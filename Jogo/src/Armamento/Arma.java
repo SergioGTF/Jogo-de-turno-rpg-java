@@ -1,9 +1,9 @@
-package Personagens;
+package Armamento;
 
 public class Arma {
     private String nome;
     private int dano;
-    private String categoria; // pesada ou leve
+    private String categoria; 
 
     public Arma(String nome, int dano, String categoria) {
         this.nome = nome;

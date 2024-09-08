@@ -11,7 +11,7 @@ public class Adversario extends Personagem {
 
     @Override
     public void realizarAcao(Personagem jogador) {
-        int escolha = random.nextInt(4); // Agora há mais ações
+        int escolha = random.nextInt(4);
         switch (escolha) {
             case 0:
                 int dano = calcularDano();
@@ -22,16 +22,16 @@ public class Adversario extends Personagem {
                 System.out.println(getNome() + " defendeu.");
                 break;
             case 2:
-                if (getVida() < (getConstituicao() * 5)) { // Se vida abaixo de 50% usa poção
+                if (getVida() < (getConstituicao() * 5)) { 
                     int cura = rolarD6() + rolarD6() + rolarD6();
                     setVida(getVida() + cura);
                     System.out.println(getNome() + " usou uma poção e recuperou " + cura + " pontos de vida.");
                 } else {
-                    realizarAcao(jogador); // Caso contrário, ataca de novo
+                    realizarAcao(jogador); 
                 }
                 break;
             case 3:
-                int ataquePoderoso = calcularDano() + rolarD6(); // Ataque especial, com bônus
+                int ataquePoderoso = calcularDano() + rolarD6(); 
                 jogador.receberDano(ataquePoderoso);
                 System.out.println(getNome() + " usou um ataque especial e causou " + ataquePoderoso + " de dano!");
                 break;

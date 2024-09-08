@@ -2,6 +2,9 @@ package Personagens;
 
 import java.util.Scanner;
 
+import Armamento.Arma;
+import Armamento.Armadura;
+
 public  class GerenciadorPersonagem {
     private Scanner scanner = new Scanner(System.in);
 

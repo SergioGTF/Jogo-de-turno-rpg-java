@@ -8,16 +8,15 @@ import Combate.*;
 
 public class Menu {
     public void exibirMenu() {
-        Scanner entrada = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println();
             System.out.println("Bem-vindo ao RPG de Combate!");
             System.out.println("1 - Iniciar Jogo");
             System.out.println("2 - História");
             System.out.println("3 - Sair");
             System.out.print("Escolha uma opção: ");
-            int escolha = entrada.nextInt();
-            entrada.nextLine();
+            int escolha = scanner.nextInt();
+            scanner.nextLine();
 
             switch (escolha) {
                 case 1:
@@ -25,7 +24,7 @@ public class Menu {
                     GerenciadorInimigos gerenciadorInimigos = new GerenciadorInimigos();
                     GerenciadorCombate gerenciadorCombate = new GerenciadorCombate();
 
-                    // Criar jogador
+                    // Criar jogador e escolher arma
                     Jogador jogador = gerenciadorPersonagem.criarJogador();
 
                     // Criar inimigos
@@ -39,7 +38,7 @@ public class Menu {
                     break;
                 case 3:
                     System.out.println("Saindo do jogo...");
-                    entrada.close();
+                    scanner.close();
                     System.exit(0);
                 default:
                     System.out.println("Opção inválida, tente novamente.");
@@ -48,7 +47,6 @@ public class Menu {
     }
 
     private void exibirHistoria() {
-        System.out.println();
         System.out.println(
                 "História: Falta pensar em uma");
     }

@@ -62,15 +62,24 @@ public abstract class Personagem {
     }
 
     public int calcularDano() {
+        if (arma == null) {
+            System.out.println(getNome() + " não está equipado com uma arma!");
+            return 0;  // Retorna 0 se não houver arma
+        }
+    
         int dado = arma.getCategoria().equals("pesada") ? rolarD12() : rolarD6() + rolarD6() + rolarD4();
-        return dado + arma.getDano() + (arma.getCategoria().equals("pesada") ? forca : destreza);
+        return dado + arma.getDano() + (arma.getCategoria().equals("pesada") ? getForca() : getDestreza());
     }
-
-    public void receberDano(int dano){
-        int defesa = armadura != null ? armadura.getDefesa() + constituicao : 0;
+    
+    public void receberDano(int dano) {
+        int defesa = 0;
+        if (armadura != null) {
+            defesa = armadura.getDefesa() + getConstituicao();
+        }
+    
         int danoFinal = Math.max(dano - defesa, 0);
-        vida -= danoFinal;
-        System.out.println(nome + " recebeu " + danoFinal + " de dano. Vida restante: " + vida);
+        setVida(getVida() - danoFinal);
+        System.out.println(getNome() + " recebeu " + danoFinal + " de dano. Vida restante: " + getVida());
     }
 
     public boolean estaVivo(){

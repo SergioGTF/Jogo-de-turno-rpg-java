@@ -24,15 +24,17 @@ public class GerenciadorCombate {
             }
 
             if (!jogador.estaVivo()) {
+                System.out.println();
                 System.out.println(adversario.getNome() + " venceu!");
                 break;
             } else {
+                System.out.println();
                 System.out.println(jogador.getNome() + " venceu o combate contra " + adversario.getNome() + "!");
             }
         }
         if (jogador.estaVivo()) {
+            System.out.println();
             System.out.println(jogador.getNome() + " sobreviveu a todos os combates!");
         }
     }
 }
-

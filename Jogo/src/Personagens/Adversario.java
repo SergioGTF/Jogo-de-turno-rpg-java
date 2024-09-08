@@ -16,26 +16,29 @@ public class Adversario extends Personagem {
             case 0:
                 int dano = calcularDano();
                 jogador.receberDano(dano);
+                System.out.println();
                 System.out.println(getNome() + " atacou " + jogador.getNome());
                 break;
             case 1:
+                System.out.println();
                 System.out.println(getNome() + " defendeu.");
                 break;
             case 2:
-                if (getVida() < (getConstituicao() * 5)) { 
+                if (getVida() < (getConstituicao() * 5)) {
                     int cura = rolarD6() + rolarD6() + rolarD6();
                     setVida(getVida() + cura);
+                    System.out.println();
                     System.out.println(getNome() + " usou uma poção e recuperou " + cura + " pontos de vida.");
                 } else {
-                    realizarAcao(jogador); 
+                    realizarAcao(jogador);
                 }
                 break;
             case 3:
-                int ataquePoderoso = calcularDano() + rolarD6(); 
+                int ataquePoderoso = calcularDano() + rolarD6();
                 jogador.receberDano(ataquePoderoso);
+                System.out.println();
                 System.out.println(getNome() + " usou um ataque especial e causou " + ataquePoderoso + " de dano!");
                 break;
         }
     }
 }
-

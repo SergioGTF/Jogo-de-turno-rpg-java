@@ -3,6 +3,7 @@ package Armamento;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class GerenciarArmamento {
     private Scanner entrada = new Scanner(System.in);
@@ -21,10 +22,15 @@ public class GerenciarArmamento {
 
         int escolha = -1;
         while (escolha < 1 || escolha > armas.size()) {
-            System.out.print("Digite o número da arma escolhida: ");
-            escolha = entrada.nextInt();
-            if (escolha < 1 || escolha > armas.size()) {
-                System.out.println("Escolha inválida, tente novamente.");
+            try {
+                System.out.print("Digite o número da arma escolhida: ");
+                escolha = entrada.nextInt();
+                if (escolha < 1 || escolha > armas.size()) {
+                    System.out.println("Escolha inválida, tente novamente.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida! Digite um número.");
+                entrada.next();
             }
         }
 
@@ -45,10 +51,15 @@ public class GerenciarArmamento {
 
         int escolha = -1;
         while (escolha < 1 || escolha > armaduras.size()) {
-            System.out.print("Digite o número da armadura escolhida: ");
-            escolha = entrada.nextInt();
-            if (escolha < 1 || escolha > armaduras.size()) {
-                System.out.println("Escolha inválida, tente novamente.");
+            try {
+                System.out.print("Digite o número da armadura escolhida: ");
+                escolha = entrada.nextInt();
+                if (escolha < 1 || escolha > armaduras.size()) {
+                    System.out.println("Escolha inválida, tente novamente.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida! Digite um número.");
+                entrada.next(); 
             }
         }
 

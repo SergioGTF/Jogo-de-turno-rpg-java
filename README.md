@@ -17,7 +17,8 @@ Este projeto implementa um sistema de combate em turnos inspirado em JRPGs (Japa
 
 - **Fluxograma do Jogo**
 
-```Início 
+```
+Início 
   |
   v
 Criar Personagem
@@ -85,7 +86,8 @@ Jogador Morto?  Repetir Combate
 Sim   Não
  |     |
  v     v
-Fim de Jogo  Vitória```
+Fim de Jogo  Vitória
+```
 
 
 ## Requisitos

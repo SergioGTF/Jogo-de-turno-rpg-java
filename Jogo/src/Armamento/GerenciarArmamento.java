@@ -9,11 +9,13 @@ public class GerenciarArmamento {
     private Scanner entrada = new Scanner(System.in);
 
     public Arma escolherArma() {
+
         List<Arma> armas = new ArrayList<>();
         armas.add(new Arma("Espada Longa", 15, "pesada"));
         armas.add(new Arma("Adaga", 10, "leve"));
         armas.add(new Arma("Martelo de Guerra", 20, "pesada"));
 
+        System.out.println();
         System.out.println("Escolha sua arma:");
         for (int i = 0; i < armas.size(); i++) {
             System.out.println((i + 1) + " - " + armas.get(i).getNome() + " (Dano: " + armas.get(i).getDano()
@@ -23,13 +25,19 @@ public class GerenciarArmamento {
         int escolha = -1;
         while (escolha < 1 || escolha > armas.size()) {
             try {
+                System.out.println();
                 System.out.print("Digite o número da arma escolhida: ");
+                System.out.println();
                 escolha = entrada.nextInt();
                 if (escolha < 1 || escolha > armas.size()) {
+                    System.out.println();
                     System.out.println("Escolha inválida, tente novamente.");
+                    System.out.println();
                 }
             } catch (InputMismatchException e) {
+                System.out.println();
                 System.out.println("Entrada inválida! Digite um número.");
+                System.out.println();
                 entrada.next();
             }
         }
@@ -52,14 +60,18 @@ public class GerenciarArmamento {
         int escolha = -1;
         while (escolha < 1 || escolha > armaduras.size()) {
             try {
+                System.out.println();
                 System.out.print("Digite o número da armadura escolhida: ");
+                System.out.println();
                 escolha = entrada.nextInt();
                 if (escolha < 1 || escolha > armaduras.size()) {
+                    System.out.println();
                     System.out.println("Escolha inválida, tente novamente.");
+                    System.out.println();
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Entrada inválida! Digite um número.");
-                entrada.next(); 
+                entrada.next();
             }
         }
 

@@ -17,8 +17,8 @@ public class GerenciadorInimigos {
         orc.equiparArma(new Arma("Machado", 10, "pesada"));
         adversarios.add(orc);
 
-        Adversario dragao = new Adversario("Dragão", 150, 20, 10, 7, 6);
-        dragao.equiparArma(new Arma("Garras", 15, "pesada"));
+        Adversario dragao = new Adversario("Dragão", 150, 15, 10, 7, 6);
+        dragao.equiparArma(new Arma("Garras", 12, "pesada"));
         adversarios.add(dragao);
 
         return adversarios;

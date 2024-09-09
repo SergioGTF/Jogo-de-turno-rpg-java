@@ -3,7 +3,7 @@ package Armamento;
 public class Arma {
     private String nome;
     private int dano;
-    private String categoria; 
+    private String categoria;
 
     public Arma(String nome, int dano, String categoria) {
         this.nome = nome;
@@ -23,5 +23,3 @@ public class Arma {
         return categoria;
     }
 }
-
-

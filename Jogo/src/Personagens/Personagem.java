@@ -64,39 +64,39 @@ public abstract class Personagem {
     public int calcularDano() {
         if (arma == null) {
             System.out.println(getNome() + " não está equipado com uma arma!");
-            return 0;  
+            return 0;
         }
-    
+
         int dado = arma.getCategoria().equals("pesada") ? rolarD12() : rolarD6() + rolarD6() + rolarD4();
         return dado + arma.getDano() + (arma.getCategoria().equals("pesada") ? getForca() : getDestreza());
     }
-    
+
     public void receberDano(int dano) {
         int defesa = 0;
         if (armadura != null) {
             defesa = armadura.getDefesa() + getConstituicao();
         }
-    
+
         int danoFinal = Math.max(dano - defesa, 0);
         setVida(getVida() - danoFinal);
         System.out.println(getNome() + " recebeu " + danoFinal + " de dano. Vida restante: " + getVida());
     }
 
-    public boolean estaVivo(){
+    public boolean estaVivo() {
         return vida > 0;
     }
 
     public abstract void realizarAcao(Personagem alvo);
 
-    protected int rolarD6(){
+    protected int rolarD6() {
         return new Random().nextInt(6) + 1;
     }
 
-    protected int rolarD12(){
+    protected int rolarD12() {
         return new Random().nextInt(12) + 1;
     }
 
-    protected int rolarD4(){
+    protected int rolarD4() {
         return new Random().nextInt(4) + 1;
     }
 }

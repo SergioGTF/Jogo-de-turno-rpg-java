@@ -38,4 +38,3 @@ public class GerenciadorCombate {
         atacante.realizarAcao(defensor);
     }
 }
-

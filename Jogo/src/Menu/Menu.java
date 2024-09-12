@@ -1,9 +1,9 @@
 package Menu;
 
-import java.util.List;
 import java.util.Scanner;
+import java.util.List;
 import Personagens.*;
-import Combate.GerenciadorCombate;
+import Combate.*;
 
 public class Menu {
     private Scanner scanner = new Scanner(System.in);
@@ -30,40 +30,32 @@ public class Menu {
         }
     }
 
-    // Função para apresentar a história interativa com escolhas
     private void exibirHistoria() {
         System.out.println("Você é um guerreiro solitário em um mundo sombrio e caótico...");
         System.out.println("Monstros tomaram conta das terras e você é o único capaz de restaurar a paz.");
         System.out.println("Você deve escolher um caminho para iniciar sua jornada.");
 
-        // Apresentar escolhas de caminhos
         System.out.println("\nEscolha seu caminho:");
         System.out.println("1 - Floresta Sombria");
         System.out.println("2 - Montanhas Geladas");
         System.out.println("3 - Deserto Ardente");
 
         int caminhoEscolhido = scanner.nextInt();
-        scanner.nextLine(); // Limpar o buffer
-
+        scanner.nextLine(); 
         iniciarJogo(caminhoEscolhido);
     }
 
-    // Função que inicia o jogo com base no caminho escolhido
     private void iniciarJogo(int caminhoEscolhido) {
         GerenciadorPersonagem gerenciadorPersonagem = new GerenciadorPersonagem();
         GerenciadorInimigos gerenciadorInimigos = new GerenciadorInimigos();
         GerenciadorCombate gerenciadorCombate = new GerenciadorCombate();
 
-        // Criar jogador
         Jogador jogador = gerenciadorPersonagem.criarJogador();
 
-        // Escolher inimigos com base no caminho
         List<Adversario> inimigos = gerenciadorInimigos.criarInimigosPorCaminho(caminhoEscolhido);
 
-        // Iniciar combate com os inimigos do caminho escolhido
         gerenciadorCombate.iniciarCombate(jogador, inimigos);
 
-        // Após derrotar os inimigos do caminho, lutar contra o inimigo final
         Adversario inimigoFinal = gerenciadorInimigos.criarInimigoFinal();
         System.out.println("Você chegou ao final da sua jornada. O inimigo final o aguarda.");
         gerenciadorCombate.iniciarCombate(jogador, List.of(inimigoFinal));

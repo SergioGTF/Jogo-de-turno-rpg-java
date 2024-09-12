@@ -58,8 +58,8 @@ public class GerenciadorInimigos {
     }
 
     public Adversario criarInimigoFinal() {
-        Adversario bossFinal = new Adversario("Demônio das Sombras", 200, 25, 15, 10, 8);
-        bossFinal.equiparArma(new Arma("Espada das Trevas", 20, "pesada"));
+        Adversario bossFinal = new Adversario("Demônio das Sombras", 200, 10, 15, 10, 8);
+        bossFinal.equiparArma(new Arma("Espada das Trevas", 10, "pesada"));
         return bossFinal;
     }
 }

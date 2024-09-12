@@ -13,7 +13,6 @@ public class GerenciarArmamento {
         armas.add(new Arma("Adaga", 10, "leve"));
         armas.add(new Arma("Martelo de Guerra", 20, "pesada"));
 
-        // Escolha aleatória de arma
         int index = random.nextInt(armas.size());
         Arma armaEscolhida = armas.get(index);
 
@@ -30,7 +29,6 @@ public class GerenciarArmamento {
         armaduras.add(new Armadura("Armadura de Ferro", 10));
         armaduras.add(new Armadura("Armadura de Placas", 15));
 
-        // Escolha aleatória de armadura
         int index = random.nextInt(armaduras.size());
         Armadura armaduraEscolhida = armaduras.get(index);
 

@@ -43,9 +43,11 @@ Criar Personagem
   |
   v
 Vitória
+```
 
 - **Criação de personagem**
 
+```
 Criação de Personagem
   |
   v
@@ -59,9 +61,10 @@ Escolher Arma
   |
   v
 Escolher Armadura
-
+```
 
 - **Fluxograma de combate**
+```
 Combate
   |
   v

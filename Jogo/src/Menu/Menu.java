@@ -1,7 +1,6 @@
 package Menu;
 
 import java.util.Scanner;
-import java.util.List;
 import Personagens.*;
 import Combate.*;
 
@@ -47,13 +46,10 @@ public class Menu {
 
     private void iniciarJogo(int caminhoEscolhido) {
         GerenciadorPersonagem gerenciadorPersonagem = new GerenciadorPersonagem();
-        GerenciadorInimigos gerenciadorInimigos = new GerenciadorInimigos();
         GerenciadorCombate gerenciadorCombate = new GerenciadorCombate();
 
         Jogador jogador = gerenciadorPersonagem.criarJogador();
 
-        List<Adversario> inimigos = gerenciadorInimigos.criarInimigosPorCaminho(caminhoEscolhido);
-
-        gerenciadorCombate.iniciarCombate(jogador, inimigos);
+        gerenciadorCombate.iniciarCombate(jogador, caminhoEscolhido);
     }
 }

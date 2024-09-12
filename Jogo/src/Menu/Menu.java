@@ -55,9 +55,5 @@ public class Menu {
         List<Adversario> inimigos = gerenciadorInimigos.criarInimigosPorCaminho(caminhoEscolhido);
 
         gerenciadorCombate.iniciarCombate(jogador, inimigos);
-
-        Adversario inimigoFinal = gerenciadorInimigos.criarInimigoFinal();
-        System.out.println("Você chegou ao final da sua jornada. O inimigo final o aguarda.");
-        gerenciadorCombate.iniciarCombate(jogador, List.of(inimigoFinal));
     }
 }

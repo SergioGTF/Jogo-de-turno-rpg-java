@@ -15,63 +15,58 @@ public class GerenciadorCombate {
             while (jogador.estaVivo() && adversario.estaVivo()) {
                 realizarTurno(jogador, adversario);
                 if (!adversario.estaVivo()) {
-                    System.out.println();
                     System.out.println(jogador.getNome() + " venceu o combate contra " + adversario.getNome() + "!");
-                    System.out.println();
-                    break;
+                    break; 
                 }
 
                 realizarTurno(adversario, jogador);
                 if (!jogador.estaVivo()) {
-                    System.out.println();
                     System.out.println(adversario.getNome() + " venceu!");
-                    System.out.println();
                     exibirDerrota(jogador);
-                    return;
+                    return; 
                 }
             }
 
-            if (!jogador.estaVivo()) {
-                System.out.println("Fim de jogo. Você foi derrotado.");
-                exibirDerrota(jogador);
+            if (jogador.estaVivo()) {
+                if (i == 0) {
+                    recompensas.darPremioPrimeiroCombate(jogador);
+                } else if (i == 1) {
+                    recompensas.darPremioSegundoCombate(jogador);
+                }
+            } else {
                 return;
-            }
-
-            if (i == 0) {  
-                recompensas.darPremioPrimeiroCombate(jogador);
-            } else if (i == 1) {  
-                recompensas.darPremioSegundoCombate(jogador);
             }
         }
 
         if (jogador.estaVivo()) {
             Adversario inimigoFinal = new GerenciadorInimigos().criarInimigoFinal();
             System.out.println("Você chegou ao final da sua jornada. O inimigo final, " + inimigoFinal.getNome() + ", o aguarda.");
-
-            while (jogador.estaVivo() && inimigoFinal.estaVivo()) {
-                realizarTurno(jogador, inimigoFinal);
-                if (!inimigoFinal.estaVivo()) {
-                    System.out.println(jogador.getNome() + " derrotou o inimigo final, " + inimigoFinal.getNome() + "!");
-                    break;
-                }
-
-                realizarTurno(inimigoFinal, jogador);
-                if (!jogador.estaVivo()) {
-                    System.out.println(inimigoFinal.getNome() + " venceu!");
-                    exibirDerrota(jogador);
-                    return;
-                }
-            }
-
-            if (jogador.estaVivo()) {
-                recompensas.darPremioFinal(jogador);
-                exibirVitoria(jogador);
-            }
+            realizarCombateFinal(jogador, inimigoFinal);
         }
     }
 
     private void realizarTurno(Personagem atacante, Personagem defensor) {
         atacante.realizarAcao(defensor);
+    }
+
+    
+    private void realizarCombateFinal(Jogador jogador, Adversario inimigoFinal) {
+        while (jogador.estaVivo() && inimigoFinal.estaVivo()) {
+            realizarTurno(jogador, inimigoFinal);
+            if (!inimigoFinal.estaVivo()) {
+                System.out.println(jogador.getNome() + " derrotou o inimigo final, " + inimigoFinal.getNome() + "!");
+                recompensas.darPremioFinal(jogador);
+                exibirVitoria(jogador);
+                return;
+            }
+
+            realizarTurno(inimigoFinal, jogador);
+            if (!jogador.estaVivo()) {
+                System.out.println(inimigoFinal.getNome() + " venceu!");
+                exibirDerrota(jogador);
+                return;
+            }
+        }
     }
 
     private void exibirVitoria(Jogador jogador) {

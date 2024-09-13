@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 import Armamento.Arma;
-import Armamento.GerenciarArmamento;
 
 public class GerenciadorInimigos {
     private Random random = new Random();

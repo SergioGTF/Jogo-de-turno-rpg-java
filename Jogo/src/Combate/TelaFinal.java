@@ -4,6 +4,23 @@ import Personagens.Jogador;
 
 public class TelaFinal {
     public void exibirVitoria(Jogador jogador) {
+        System.out.println(" VVVVVVV         VVVVVVV   IIIIIIIIIIIIIIII   TTTTTTTTTTTTTTTTTTTT      OOOOOOOOOOOO                     ");
+        System.out.println(" V:::::V         V:::::V   I::::::::::::::I   T::::::::::::::::::T     O::::O  O::::O                    ");
+        System.out.println(" V:::::V         V:::::V   IIIIII::::IIIIII   TTTTTTTT::::TTTTTTTT    O::::O                            ");
+        System.out.println("  V:::::V       V:::::V         I::::I               T::::T          O::::O                             ");
+        System.out.println("  V:::::V       V:::::V         I::::I               T::::T         O::::O                             ");
+        System.out.println("  V:::::V       V:::::V         I::::I               T::::T        O::::O                              ");
+        System.out.println("   V:::::V     V:::::V          I::::I               T::::T       O::::O                              ");
+        System.out.println("   V:::::V     V:::::V          I::::I               T::::T                                            ");
+        System.out.println("   V:::::V     V:::::V          I::::I               T::::T                                            ");
+        System.out.println("    V:::::V   V:::::V           I::::I               T::::T                                            ");
+        System.out.println("    V:::::V   V:::::V           I::::I               T::::T                                            ");
+        System.out.println("    V:::::V   V:::::V           I::::I               T::::T                                            ");
+        System.out.println("     V:::::V V:::::V            I::::I               T::::T                                            ");
+        System.out.println("     V:::::V V:::::V       IIIIII::::IIIIII          T::::T                                            ");
+        System.out.println("     V:::::V V:::::V       I::::::::::::::I          T::::T                                            ");
+        System.out.println("      VVVVVVVVVVVVV        IIIIIIIIIIIIIIII          TTTTTT                                            ");
+
         System.out.println("\nParabéns! Você venceu o jogo!");
         System.out.println("\nStatus final do jogador:");
         System.out.println("\nNome: " + jogador.getNome());

@@ -9,17 +9,17 @@ public class GerenciarArmamento {
 
     public Arma escolherArma() {
         List<Arma> armas = new ArrayList<>();
-        armas.add(new Arma("Espada Longa", 15, "pesada"));
+        armas.add(new Arma("Punhos de ferro", 15, "pesada"));
         armas.add(new Arma("Adaga", 10, "leve"));
         armas.add(new Arma("Martelo de Guerra", 20, "pesada"));
 
         int index = random.nextInt(armas.size());
         Arma armaEscolhida = armas.get(index);
 
-        System.out.println("Arma escolhida:");
-        System.out.println(armaEscolhida.getNome() + " (Dano: " + armaEscolhida.getDano() +
+        System.out.println("Arma escolhida: \n");
+        System.out.println(armaEscolhida.getNome() + " (\nDano: " + armaEscolhida.getDano() +
                 ", Categoria: " + armaEscolhida.getCategoria() + ")");
-        
+
         return armaEscolhida;
     }
 
@@ -27,14 +27,14 @@ public class GerenciarArmamento {
         List<Armadura> armaduras = new ArrayList<>();
         armaduras.add(new Armadura("Armadura de Couro", 5));
         armaduras.add(new Armadura("Armadura de Ferro", 10));
-        armaduras.add(new Armadura("Armadura de Placas", 15));
+        armaduras.add(new Armadura("Armadura de Obsidiana", 15));
 
         int index = random.nextInt(armaduras.size());
         Armadura armaduraEscolhida = armaduras.get(index);
 
-        System.out.println("Armadura escolhida:");
+        System.out.println("\n Armadura escolhida: \n");
         System.out.println(armaduraEscolhida.getNome() + " (Defesa: " + armaduraEscolhida.getDefesa() + ")");
-        
+
         return armaduraEscolhida;
     }
 }

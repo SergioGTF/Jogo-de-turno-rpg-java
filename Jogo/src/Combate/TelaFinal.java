@@ -4,16 +4,17 @@ import Personagens.Jogador;
 
 public class TelaFinal {
     public void exibirVitoria(Jogador jogador) {
-        System.out.println("Parabéns! Você venceu o jogo!");
-        System.out.println("Status final do jogador:");
-        System.out.println("Nome: " + jogador.getNome());
-        System.out.println("Vida: " + jogador.getVida());
-        System.out.println("Força: " + jogador.getForca());
-        // Mostrar outros atributos
+        System.out.println("\n Parabéns! Você venceu o jogo!");
+        System.out.println("\n Status final do jogador:");
+        System.out.println("\n Nome: " + jogador.getNome());
+        System.out.println("\n Vida: " + jogador.getVida());
+        System.out.println("\n Força: " + jogador.getForca());
+        System.out.println();
+        System.out.println("\n Feito por: Sergio Gabriel e Pedro Monteiro");
     }
 
     public void exibirDerrota(Jogador jogador) {
-        System.out.println("Você foi derrotado...");
-        System.out.println("Tente novamente!");
+        System.out.println("\n Você foi derrotado...");
+        System.out.println("\n Tente novamente!");
     }
 }

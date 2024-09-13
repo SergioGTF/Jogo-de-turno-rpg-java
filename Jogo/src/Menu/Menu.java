@@ -9,10 +9,10 @@ public class Menu {
 
     public void exibirMenu() {
         while (true) {
-            System.out.println("Bem-vindo ao RPG de Combate!");
+            System.out.println("\nBem-vindo ao RPG de Combate!\n");
             System.out.println("1 - Iniciar Jogo");
             System.out.println("2 - Sair");
-            System.out.print("Escolha uma opção: ");
+            System.out.print("\nEscolha uma opção: ");
             int escolha = scanner.nextInt();
             scanner.nextLine();
 
@@ -21,26 +21,26 @@ public class Menu {
                     exibirHistoria();
                     break;
                 case 2:
-                    System.out.println("Saindo do jogo...");
+                    System.out.println("\nSaindo do jogo...");
                     System.exit(0);
                 default:
-                    System.out.println("Opção inválida, tente novamente.");
+                    System.out.println("\nOpção inválida, tente novamente.");
             }
         }
     }
 
     private void exibirHistoria() {
-        System.out.println("Você é um guerreiro solitário em um mundo sombrio e caótico...");
+        System.out.println("\nVocê é um guerreiro solitário em um mundo sombrio e caótico...");
         System.out.println("Monstros tomaram conta das terras e você é o único capaz de restaurar a paz.");
         System.out.println("Você deve escolher um caminho para iniciar sua jornada.");
 
-        System.out.println("\nEscolha seu caminho:");
+        System.out.println("\nEscolha seu caminho:\n");
         System.out.println("1 - Floresta Sombria");
         System.out.println("2 - Montanhas Geladas");
-        System.out.println("3 - Deserto Ardente");
+        System.out.println("3 - Deserto Ardente\n");
 
         int caminhoEscolhido = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
         iniciarJogo(caminhoEscolhido);
     }
 

@@ -63,7 +63,7 @@ public abstract class Personagem {
 
     public int calcularDano() {
         if (arma == null) {
-            System.out.println(getNome() + " não está equipado com uma arma!");
+            System.out.println(getNome() + "\n não está equipado com uma arma!");
             return 0;
         }
 
@@ -79,7 +79,7 @@ public abstract class Personagem {
 
         int danoFinal = Math.max(dano - defesa, 0);
         setVida(getVida() - danoFinal);
-        System.out.println(getNome() + " recebeu " + danoFinal + " de dano. Vida restante: " + getVida());
+        System.out.println(getNome() + "\n recebeu " + danoFinal + " de dano. Vida restante: " + getVida());
     }
 
     public boolean estaVivo() {

@@ -3,11 +3,11 @@ package Combate;
 import Personagens.*;
 
 public class GerenciadorCombate {
-    private Recompensas recompensas = new Recompensas(); 
+    private Recompensas recompensas = new Recompensas();
 
     public void iniciarCombate(Jogador jogador, int caminhoEscolhido) {
         GerenciadorInimigos gerenciadorInimigos = new GerenciadorInimigos();
-        
+
         Adversario adversario1 = gerenciadorInimigos.selecionarAdversarioPrimeiroCombate(caminhoEscolhido);
         realizarCombate(jogador, adversario1);
         if (jogador.estaVivo()) {
@@ -37,7 +37,7 @@ public class GerenciadorCombate {
     }
 
     private void realizarCombate(Jogador jogador, Adversario adversario) {
-        System.out.println("O combate começou entre " + jogador.getNome() + " e " + adversario.getNome());
+        System.out.println("\nO combate começou entre " + jogador.getNome() + " e " + adversario.getNome());
         while (jogador.estaVivo() && adversario.estaVivo()) {
             jogador.realizarAcao(adversario);
             if (adversario.estaVivo()) {

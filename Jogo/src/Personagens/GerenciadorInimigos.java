@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 import Armamento.Arma;
+import Armamento.GerenciarArmamento;
 
 public class GerenciadorInimigos {
     private Random random = new Random();
@@ -129,6 +130,6 @@ public class GerenciadorInimigos {
                 Adversario monarcaSombrasPadrao = new Adversario("Monarca das Sombras", 200, 25, 15, 10, 8);
                 monarcaSombrasPadrao.equiparArma(new Arma("Espada das Trevas", 20, "pesada"));
                 return monarcaSombrasPadrao;
-        }
+        }    
     }
 }

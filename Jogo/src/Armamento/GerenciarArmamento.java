@@ -32,7 +32,7 @@ public class GerenciarArmamento {
         int index = random.nextInt(armaduras.size());
         Armadura armaduraEscolhida = armaduras.get(index);
 
-        System.out.println("\n Armadura escolhida: \n");
+        System.out.println("\nArmadura escolhida: \n");
         System.out.println(armaduraEscolhida.getNome() + " (Defesa: " + armaduraEscolhida.getDefesa() + ")");
 
         return armaduraEscolhida;

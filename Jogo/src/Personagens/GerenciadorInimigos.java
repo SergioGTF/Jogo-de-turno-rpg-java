@@ -111,8 +111,8 @@ public class GerenciadorInimigos {
     public Adversario criarInimigoFinal(int caminhoEscolhido) {
         switch (caminhoEscolhido) {
             case 1:
-                Adversario monarcaSombras = new Adversario("Monarca das Sombras", 200, 25, 15, 10, 8);
-                monarcaSombras.equiparArma(new Arma("Espada das Trevas", 20, "pesada"));
+                Adversario monarcaSombras = new Adversario("Monarca das Sombras", 200, 15, 15, 10, 8);
+                monarcaSombras.equiparArma(new Arma("Espada das Trevas", 10, "pesada"));
                 return monarcaSombras;
 
             case 2:

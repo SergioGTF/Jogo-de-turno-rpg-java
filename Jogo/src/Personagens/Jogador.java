@@ -43,7 +43,7 @@ public class Jogador extends Personagem {
     }
 
     private void inicializarMagias() {
-        magias.add(new Magia("Bola de Fogo", 20, "D", 10)); 
+        magias.add(new Magia("Bola de Fogo", 20, "D", 10));
         magias.add(new Magia("Raio", 25, "C", 15));
         magias.add(new Magia("Tornado", 30, "B", 20));
         magias.add(new Magia("Terremoto", 35, "A", 25));
@@ -67,14 +67,17 @@ public class Jogador extends Personagem {
             }
         }
     }
+
     private void mostrarManaAtual() {
         System.out.printf("\nMana atual: %d%n", this.mana);
     }
+
     private int escolherMagia() {
         System.out.println("\nEscolha uma magia para usar:");
         for (int i = 0; i < magias.size(); i++) {
             Magia magia = magias.get(i);
-            System.out.printf("%d - %s (Rank: %s, Custo: %d mana)%n", (i + 1), magia.getNome(), magia.getRank(), magia.getCusto());
+            System.out.printf("%d - %s (Rank: %s, Custo: %d mana)%n", (i + 1), magia.getNome(), magia.getRank(),
+                    magia.getCusto());
         }
         int escolha;
         do {
@@ -85,6 +88,7 @@ public class Jogador extends Personagem {
         } while (escolha < 0 || escolha >= magias.size());
         return escolha;
     }
+
     @Override
     public void realizarAcao(Personagem adversario) {
         System.out.println("\nEscolha sua ação: ");
@@ -109,6 +113,7 @@ public class Jogador extends Personagem {
                 break;
         }
     }
+
     private void usarPocao() {
         if (poçõesRestantes > 0) {
             int cura = rolarD6() + rolarD6() + rolarD6();
@@ -120,6 +125,7 @@ public class Jogador extends Personagem {
             System.out.println("\nVocê não tem mais poções disponíveis.");
         }
     }
+
     public void resetarPocoes() {
         poçõesRestantes = 3;
     }

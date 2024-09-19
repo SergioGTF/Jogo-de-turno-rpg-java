@@ -45,9 +45,9 @@ public class GerenciadorInimigos {
                 escorpiaoGigante.equiparArma(new Arma("Ferrão Mortal", 12, "leve"));
                 adversarios.add(escorpiaoGigante);
 
-                Adversario elementalFogo = new Adversario("Elemental de Fogo", 70, 10, 5, 7, 5);
-                elementalFogo.equiparArma(new Arma("Tornado de Areia e Fogo", 14, "leve"));
-                adversarios.add(elementalFogo);
+                Adversario Blaze = new Adversario("Blaze", 70, 10, 5, 7, 5);
+                Blaze.equiparArma(new Arma("Tornado de Areia e Fogo", 14, "leve"));
+                adversarios.add(Blaze);
 
                 Adversario serpenteAreia = new Adversario("Serpente de Areia", 65, 9, 6, 7, 6);
                 serpenteAreia.equiparArma(new Arma("Bote Letal", 13, "leve"));
@@ -83,9 +83,9 @@ public class GerenciadorInimigos {
                 golemGelo.equiparArma(new Arma("Socos congelantes", 15, "pesada"));
                 adversarios.add(golemGelo);
 
-                Adversario dragaoBranco = new Adversario("Dragão de Gelo Jovem", 85, 15, 9, 8, 7);
-                dragaoBranco.equiparArma(new Arma("Chamas Frias", 16, "leve"));
-                adversarios.add(dragaoBranco);
+                Adversario dragaoGelo = new Adversario("Dragão de Gelo Jovem", 85, 15, 9, 8, 7);
+                dragaoGelo.equiparArma(new Arma("Chamas Frias", 16, "leve"));
+                adversarios.add(dragaoGelo);
                 break;
 
             case 3:

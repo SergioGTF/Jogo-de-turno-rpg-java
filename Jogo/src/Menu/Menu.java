@@ -9,6 +9,7 @@ public class Menu {
 
     public void exibirMenu() {
         while (true) {
+        System.out.println("\n");
         System.out.println("        JJJJJJJJJJ      RRRRRRRRRRRRRRRR      PPPPPPPPPPPPPPPP      GGGGGGGGGGGGGGGGG");
         System.out.println("        J::::::::J      R::::::::::::::::R    P::::::::::::::::P   G::::::::::::::::G");
         System.out.println("        J::::::::J      R::::::RRRRRR:::::R   P::::::PPPPPP:::::P  G::::::::::::::::G");
@@ -17,10 +18,10 @@ public class Menu {
         System.out.println("         J:::::::J        R::::R     R:::::R    P::::P     P:::::P G:::::G            ");
         System.out.println("         J:::::::J        R::::RRRRRR:::::R     P::::PPPPPP:::::P  G:::::G    GGGGGGG ");
         System.out.println("         J:::::::J        R:::::::::::::RR      P:::::::::::::PP   G:::::G    G:::::G ");
-        System.out.println("JJ       J:::::::J        R::::RRRRRR:::::R     P::::PPPPPPPPP     G:::::G    G:::::G ");
-        System.out.println("J:::::   J:::::::J        R::::R     R:::::R    P::::P             G:::::G      G:::G ");
-        System.out.println("J:::::   J:::::::J        R::::R     R:::::R    P::::P             G:::::G      G:::G ");
-        System.out.println("J::::::  J:::::::J        R::::R     R:::::R    P::::P              G:::::GGGGGG::::G ");
+        System.out.println("JJJJJJJ  J:::::::J        R::::RRRRRR:::::R     P::::PPPPPPPPP     G:::::G    G:::::G ");
+        System.out.println("J:::::J  J:::::::J        R::::R     R:::::R    P::::P             G:::::G      G:::G ");
+        System.out.println("J:::::J  J:::::::J        R::::R     R:::::R    P::::P             G:::::G      G:::G ");
+        System.out.println("J::::::J J:::::::J        R::::R     R:::::R    P::::P              G:::::GGGGGG::::G ");
         System.out.println("J:::::::J:::::::J       RR:::::R     R:::::R  PP::::::PP             G:::::::::::::G ");
         System.out.println(" J:::::::::::::J        R::::::R     R:::::R  P::::::::P              GG:::::::::::G ");
         System.out.println("  JJ:::::::::JJ         R::::::R     R:::::R  P::::::::P                GGG::::GGGGG ");

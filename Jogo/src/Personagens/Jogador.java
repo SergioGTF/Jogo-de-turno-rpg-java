@@ -87,7 +87,7 @@ public class Jogador extends Personagem {
         }
         int escolha;
         do {
-            escolha = entrada.nextInt() - 1; // Ajusta para índice de 0
+            escolha = entrada.nextInt() - 1;
             if (escolha < 0 || escolha >= magias.size()) {
                 System.out.println("\nEscolha inválida. Tente novamente.");
             }
@@ -137,4 +137,6 @@ public class Jogador extends Personagem {
     public void resetarPocoes() {
         poçõesRestantes = 3;
     }
+
+    
 }

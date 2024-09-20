@@ -35,7 +35,7 @@ public class TelaFinal {
         System.out.println(" D::D  D::D  E::EEEEE   R:R  R::R    R:R  R::R   O:::O O:::O     T::::T      A::A  A::A  ");
         System.out.println(" D::DDDD::D  E::E       R::RRR::R    R::RRR::R   O:::O O:::O     T::::T     A:::AAAA:::A ");
         System.out.println(" D:::::::D   E::E      R::R  R::R   R::R  R::R   O:::O O:::O     T::::T     A:::A  A:::A ");
-        System.out.println(" DDDDDDDD    E::EEEEE  RRRR   RRRR  RRRR   RRRR   OOOOOOOOO      TTTTTT     AAAAA  AAAAA ");
+        System.out.println(" DDDDDDDD    EEEEEEEE  RRRR   RRRR  RRRR   RRRR   OOOOOOOOO      TTTTTT     AAAAA  AAAAA ");
 
         System.out.println("\nVocê foi derrotado...");
         System.out.println("\nTente novamente!");

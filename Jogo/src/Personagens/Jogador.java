@@ -10,17 +10,23 @@ public class Jogador extends Personagem {
     private int poçõesRestantes = 3;
     private int mana = 100;
     private int manaMaxima;
+    private int vidaMaxima;
     private List<Magia> magias = new ArrayList<>();
     private Scanner entrada = new Scanner(System.in);
 
     public Jogador(String nome, int vida, int forca, int constituicao, int agilidade, int destreza) {
         super(nome, vida, forca, constituicao, agilidade, destreza);
         this.manaMaxima = 200;
+        this.vidaMaxima = vida;
         inicializarMagias();
     }
 
     public int getMana() {
         return mana;
+    }
+
+    public int getVidaMaxima() {
+        return vidaMaxima;
     }
 
     public void setMana(int mana) {
@@ -37,7 +43,7 @@ public class Jogador extends Personagem {
     }
 
     public void regenerarManaPassivamente() {
-        int regeneracao = 5; // Mana regenerada a cada turno
+        int regeneracao = 5;
         this.mana = Math.min(this.mana + regeneracao, manaMaxima);
         System.out.printf("\nVocê regenerou %d pontos de mana. Mana atual: %d%n", regeneracao, this.mana);
     }
@@ -117,9 +123,11 @@ public class Jogador extends Personagem {
     private void usarPocao() {
         if (poçõesRestantes > 0) {
             int cura = rolarD6() + rolarD6() + rolarD6();
-            setVida(getVida() + cura);
+            int novaVida = Math.min(getVida() + cura, vidaMaxima); 
+            int vidaCurada = novaVida - getVida();
+            setVida(novaVida);
             poçõesRestantes--;
-            System.out.printf("%s usou uma poção e recuperou %d pontos de vida.%n", getNome(), cura);
+            System.out.printf("%s usou uma poção e recuperou %d pontos de vida.%n", getNome(), vidaCurada);
             System.out.println("Poções restantes: " + poçõesRestantes);
         } else {
             System.out.println("\nVocê não tem mais poções disponíveis.");

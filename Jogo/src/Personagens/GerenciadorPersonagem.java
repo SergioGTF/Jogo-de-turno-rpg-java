@@ -1,7 +1,6 @@
 package Personagens;
 
 import java.util.Scanner;
-
 import Armamento.Arma;
 import Armamento.Armadura;
 import Armamento.GerenciarArmamento;
@@ -52,6 +51,19 @@ public class GerenciadorPersonagem {
         Armadura armaduraEscolhida = gerenciadorEquipamento.escolherArmadura();
         jogador.equiparArmadura(armaduraEscolhida);
 
+        exibirAtributos(jogador);
+
         return jogador;
+    }
+
+    private void exibirAtributos(Jogador jogador) {
+        System.out.println("\nAtributos do jogador:");
+        System.out.println("\nNome: " + jogador.getNome());
+        System.out.println("\nVida: " + jogador.getVida() + "/" + jogador.getVidaMaxima());
+        System.out.println("\nForça: " + jogador.getForca());
+        System.out.println("\nConstituição: " + jogador.getConstituicao());
+        System.out.println("\nAgilidade: " + jogador.getAgilidade());
+        System.out.println("\nDestreza: " + jogador.getDestreza());
+        System.out.println("\nMana: " + jogador.getMana());
     }
 }

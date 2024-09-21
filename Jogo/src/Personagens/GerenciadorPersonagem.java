@@ -48,12 +48,49 @@ public class GerenciadorPersonagem {
         Arma armaEscolhida = gerenciadorEquipamento.escolherArma();
         jogador.equiparArma(armaEscolhida);
 
-        Armadura armaduraEscolhida = gerenciadorEquipamento.escolherArmadura();
+        Armadura armaduraEscolhida = gerenciadorEquipamento.escolherArmadura(jogador); 
         jogador.equiparArmadura(armaduraEscolhida);
 
         exibirAtributos(jogador);
 
         return jogador;
+    }
+
+    public void distribuirPontosExtras(Jogador jogador, int pontosExtras) {
+        System.out.println("\nVocê ganhou " + pontosExtras + " pontos de atributos!");
+        while (pontosExtras > 0) {
+            System.out.println("\nVocê tem " + pontosExtras + " pontos restantes para distribuir.");
+            System.out.println("1 - Aumentar Força");
+            System.out.println("2 - Aumentar Constituição");
+            System.out.println("3 - Aumentar Agilidade");
+            System.out.println("4 - Aumentar Destreza");
+            System.out.print("\nEscolha o atributo a aumentar: ");
+            int escolha = scanner.nextInt();
+
+            switch (escolha) {
+                case 1:
+                    jogador.setForca(jogador.getForca() + 1);
+                    System.out.println("Força aumentada!");
+                    break;
+                case 2:
+                    jogador.setConstituicao(jogador.getConstituicao() + 1);
+                    System.out.println("Constituição aumentada!");
+                    break;
+                case 3:
+                    jogador.setAgilidade(jogador.getAgilidade() + 1);
+                    System.out.println("Agilidade aumentada!");
+                    break;
+                case 4:
+                    jogador.setDestreza(jogador.getDestreza() + 1);
+                    System.out.println("Destreza aumentada!");
+                    break;
+                default:
+                    System.out.println("Escolha inválida, tente novamente.");
+                    continue;
+            }
+            pontosExtras--;
+        }
+        exibirAtributos(jogador);
     }
 
     private void exibirAtributos(Jogador jogador) {

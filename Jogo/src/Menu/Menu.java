@@ -49,7 +49,7 @@ public class Menu {
 
     private void exibirHistoria() {
         System.out.println("\nVocê é um guerreiro solitário em um mundo sombrio e caótico...");
-        System.out.println("Monstros tomaram conta das terras e você é o único capaz de restaurar a paz.");
+        System.out.println("Após um portal se abrir acima da cidade monstros tomaram conta das terras e você é o único capaz de restaurar a paz.");
         System.out.println("Você deve escolher um caminho para iniciar sua jornada.");
 
         System.out.println("\nEscolha seu caminho:\n");

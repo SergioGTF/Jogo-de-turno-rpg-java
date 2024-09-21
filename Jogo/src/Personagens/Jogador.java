@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import Armamento.Arma;
+import Armamento.Armadura;
 import Magia.*;
 
 public class Jogador extends Personagem {
@@ -27,6 +29,15 @@ public class Jogador extends Personagem {
 
     public int getVidaMaxima() {
         return vidaMaxima;
+    }
+
+    // Usando os métodos da classe base Personagem para acessar arma e armadura
+    public Arma getArma() {
+        return super.getArma();  // Acessando o método da classe base
+    }
+
+    public Armadura getArmadura() {
+        return super.getArmadura();  // Acessando o método da classe base
     }
 
     public void setMana(int mana) {
@@ -123,7 +134,7 @@ public class Jogador extends Personagem {
     private void usarPocao() {
         if (poçõesRestantes > 0) {
             int cura = rolarD6() + rolarD6() + rolarD6();
-            int novaVida = Math.min(getVida() + cura, vidaMaxima); 
+            int novaVida = Math.min(getVida() + cura, vidaMaxima);
             int vidaCurada = novaVida - getVida();
             setVida(novaVida);
             poçõesRestantes--;
@@ -138,5 +149,4 @@ public class Jogador extends Personagem {
         poçõesRestantes = 3;
     }
 
-    
 }

@@ -14,15 +14,15 @@ public class GerenciadorInimigos {
         switch (caminhoEscolhido) {
             case 1:
                 Adversario Enderman = new Adversario("Enderman", 40, 6, 4, 8, 5);
-                Enderman.equiparArma(new Arma("Dano", 10, "leve"));
+                Enderman.equiparArma(new Arma("Dano", 20, "leve"));
                 adversarios.add(Enderman);
 
                 Adversario Whiter = new Adversario("Whiter", 60, 8, 5, 7, 6);
-                Whiter.equiparArma(new Arma("Cabeças explosivas", 12, "leve"));
+                Whiter.equiparArma(new Arma("Cabeças explosivas", 22, "leve"));
                 adversarios.add(Whiter);
 
                 Adversario Warden = new Adversario("Warden", 80, 10, 6, 5, 4);
-                Warden.equiparArma(new Arma("Ataque sônico", 14, "pesada"));
+                Warden.equiparArma(new Arma("Ataque sônico", 24, "pesada"));
                 adversarios.add(Warden);
                 break;
 

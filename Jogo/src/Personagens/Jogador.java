@@ -9,17 +9,21 @@ import Armamento.Armadura;
 import Magia.*;
 
 public class Jogador extends Personagem {
+    private int nivel;
     private int poçõesRestantes = 3;
     private int mana = 100;
     private int manaMaxima;
     private int vidaMaxima;
     private List<Magia> magias = new ArrayList<>();
+    private List<Arma> armasUsadas = new ArrayList<>();
+    private List<Armadura> armadurasUsadas = new ArrayList<>();
     private Scanner entrada = new Scanner(System.in);
 
     public Jogador(String nome, int vida, int forca, int constituicao, int agilidade, int destreza) {
         super(nome, vida, forca, constituicao, agilidade, destreza);
         this.manaMaxima = 200;
         this.vidaMaxima = vida;
+        this.nivel = 1;
         inicializarMagias();
     }
 
@@ -31,17 +35,32 @@ public class Jogador extends Personagem {
         return vidaMaxima;
     }
 
-    // Usando os métodos da classe base Personagem para acessar arma e armadura
     public Arma getArma() {
-        return super.getArma();  // Acessando o método da classe base
+        return super.getArma();  
     }
 
     public Armadura getArmadura() {
-        return super.getArmadura();  // Acessando o método da classe base
+        return super.getArmadura(); 
     }
 
     public void setMana(int mana) {
         this.mana = Math.min(mana, manaMaxima);
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public List<Arma> getArmasUsadas() {
+        return armasUsadas;
+    }
+
+    public List<Armadura> getArmadurasUsadas() {
+        return armadurasUsadas;
     }
 
     public void recuperarMana(int quantidade) {
@@ -57,6 +76,14 @@ public class Jogador extends Personagem {
         int regeneracao = 5;
         this.mana = Math.min(this.mana + regeneracao, manaMaxima);
         System.out.printf("\nVocê regenerou %d pontos de mana. Mana atual: %d%n", regeneracao, this.mana);
+    }
+
+    public void adicionarArmaUsada(Arma arma) {
+        armasUsadas.add(arma);
+    }
+
+    public void adicionarArmaduraUsada(Armadura armadura) {
+        armadurasUsadas.add(armadura);
     }
 
     private void inicializarMagias() {
@@ -149,4 +176,15 @@ public class Jogador extends Personagem {
         poçõesRestantes = 3;
     }
 
+    @Override
+    public void equiparArma(Arma arma) {
+        super.equiparArma(arma);
+        adicionarArmaUsada(arma);  
+    }
+
+    @Override
+    public void equiparArmadura(Armadura armadura) {
+        super.equiparArmadura(armadura);
+        adicionarArmaduraUsada(armadura); 
+    }
 }

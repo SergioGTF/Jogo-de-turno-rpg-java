@@ -24,7 +24,6 @@ public abstract class Personagem {
         this.destreza = destreza;
     }
 
-    // Getters
     public String getNome() {
         return nome;
     }
@@ -49,7 +48,6 @@ public abstract class Personagem {
         return destreza;
     }
 
-    // Adicione os métodos para retornar a arma e armadura atuais:
     public Arma getArma() {
         return arma;
     }
@@ -58,7 +56,6 @@ public abstract class Personagem {
         return armadura;
     }
 
-    // Setters
     public void setForca(int forca) {
         this.forca = forca;
     }

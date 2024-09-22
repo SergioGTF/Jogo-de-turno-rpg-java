@@ -45,10 +45,10 @@ public class GerenciadorPersonagem {
         Jogador jogador = new Jogador(nomeJogador, 100, forca, constituicao, agilidade, destreza);
 
         GerenciarArmamento gerenciadorEquipamento = new GerenciarArmamento();
-        Arma armaEscolhida = gerenciadorEquipamento.escolherArma();
+        Arma armaEscolhida = gerenciadorEquipamento.escolherArma(jogador);
         jogador.equiparArma(armaEscolhida);
 
-        Armadura armaduraEscolhida = gerenciadorEquipamento.escolherArmadura(jogador); 
+        Armadura armaduraEscolhida = gerenciadorEquipamento.escolherArmadura(jogador);
         jogador.equiparArmadura(armaduraEscolhida);
 
         exibirAtributos(jogador);
@@ -102,5 +102,6 @@ public class GerenciadorPersonagem {
         System.out.println("\nAgilidade: " + jogador.getAgilidade());
         System.out.println("\nDestreza: " + jogador.getDestreza());
         System.out.println("\nMana: " + jogador.getMana());
+        System.out.println("\nNível: " + jogador.getNivel());
     }
 }

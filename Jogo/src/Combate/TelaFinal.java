@@ -23,6 +23,7 @@ public class TelaFinal {
         System.out.println("\nDestreza: " + jogador.getDestreza());
         System.out.println("\nAgilidade: " + jogador.getAgilidade());
         System.out.println("\nMana : " + jogador.getMana());
+        System.out.println("\nNível: " + jogador.getNivel());
         System.out.println();
         System.out.println("\nFeito por: Sergio Gabriel e Pedro Monteiro");
     }

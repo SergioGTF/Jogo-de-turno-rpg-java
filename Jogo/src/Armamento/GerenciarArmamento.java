@@ -7,8 +7,8 @@ import Personagens.Jogador;
 
 public class GerenciarArmamento {
     private Scanner entrada = new Scanner(System.in);
-    
-    public Arma escolherArma() {
+
+    public Arma escolherArma(Jogador jogador) {
         List<Arma> armas = new ArrayList<>();
         armas.add(new Arma("Punhos de ferro", 15, "pesada"));
         armas.add(new Arma("Adaga", 10, "leve"));
@@ -16,21 +16,35 @@ public class GerenciarArmamento {
         armas.add(new Arma("Espada de Netherite", 25, "Média"));
         armas.add(new Arma("Lâminas do Caos", 45, "Média"));
 
+        List<Arma> armasDisponiveis = new ArrayList<>();
+        for (Arma arma : armas) {
+            if ((jogador.getNivel() >= 2 && arma.getNome().equals("Martelo de Guerra")) ||
+                    (jogador.getNivel() >= 3 && arma.getNome().equals("Espada de Netherite")) ||
+                    (jogador.getNivel() >= 3 && arma.getNome().equals("Lâminas do Caos")) ||
+                    (arma.getNome().equals("Punhos de ferro") || arma.getNome().equals("Adaga"))) {
+                if (!jogador.getArmasUsadas().contains(arma)) {
+                    armasDisponiveis.add(arma);
+                }
+            }
+        }
+
         System.out.println("\nEscolha sua arma: \n");
-        for (int i = 0; i < armas.size(); i++){
-            System.out.println((i + 1) + " - " + armas.get(i).getNome() + "(Dano: " + armas.get(i).getDano() + ", Categoria: " + armas.get(i).getCategoria() + ")");
+        for (int i = 0; i < armasDisponiveis.size(); i++) {
+            System.out.println((i + 1) + " - " + armasDisponiveis.get(i).getNome() +
+                    "(Dano: " + armasDisponiveis.get(i).getDano() +
+                    ", Categoria: " + armasDisponiveis.get(i).getCategoria() + ")");
         }
 
         int escolha = -1;
-        while (escolha < 1 || escolha > armas.size()) {
+        while (escolha < 1 || escolha > armasDisponiveis.size()) {
             System.out.println("\nDigite a numeração da arma escolhida: ");
             escolha = entrada.nextInt();
-            if (escolha < 1 || escolha > armas.size()) {
+            if (escolha < 1 || escolha > armasDisponiveis.size()) {
                 System.out.println("\nEscolha inválida, tente novamente.");
             }
         }
 
-        return armas.get(escolha - 1);
+        return armasDisponiveis.get(escolha - 1);
     }
 
     public Armadura escolherArmadura(Jogador jogador) {
@@ -42,10 +56,24 @@ public class GerenciarArmamento {
         armaduras.add(new Armadura("Armadura de Netherite", 25));
         armaduras.add(new Armadura("Armadura de Rocha matriz", 30));
 
+        List<Armadura> armadurasDisponiveis = new ArrayList<>();
+        for (Armadura armadura : armaduras) {
+            if ((jogador.getNivel() >= 2 && armadura.getNome().equals("Armadura de Malha")) ||
+                    (jogador.getNivel() >= 3 && armadura.getNome().equals("Armadura de Ferro")) ||
+                    (jogador.getNivel() >= 3 && armadura.getNome().equals("Armadura de Diamante")) ||
+                    (jogador.getNivel() >= 4 && armadura.getNome().equals("Armadura de Netherite")) ||
+                    (jogador.getNivel() >= 4 && armadura.getNome().equals("Armadura de Rocha matriz")) ||
+                    (armadura.getNome().equals("Armadura de Couro"))) {
+                if (!jogador.getArmadurasUsadas().contains(armadura)) {
+                    armadurasDisponiveis.add(armadura);
+                }
+            }
+        }
+
         Armadura armaduraAtual = jogador.getArmadura();
         List<Armadura> armadurasValidas = new ArrayList<>();
 
-        for (Armadura armadura : armaduras) {
+        for (Armadura armadura : armadurasDisponiveis) {
             if (armaduraAtual == null || armadura.getDefesa() > armaduraAtual.getDefesa()) {
                 armadurasValidas.add(armadura);
             }
@@ -53,12 +81,13 @@ public class GerenciarArmamento {
 
         if (armadurasValidas.isEmpty()) {
             System.out.println("\nNão há armaduras mais fortes disponíveis.");
-            return armaduraAtual; 
+            return armaduraAtual;
         }
 
         System.out.println("\nEscolha sua nova armadura:");
         for (int i = 0; i < armadurasValidas.size(); i++) {
-            System.out.println((i + 1) + " - " + armadurasValidas.get(i).getNome() + " (Defesa: " + armadurasValidas.get(i).getDefesa() + ")");
+            System.out.println((i + 1) + " - " + armadurasValidas.get(i).getNome() +
+                    " (Defesa: " + armadurasValidas.get(i).getDefesa() + ")");
         }
 
         int escolha = -1;
